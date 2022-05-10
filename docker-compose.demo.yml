@@ -26,7 +26,7 @@ services:
       - traefik-net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.prometheus.rule=Host(`prom.somethingforsale.tk`)"
+      - "traefik.http.routers.prometheus.rule=Host(`prom.domain`)"
       - "traefik.http.services.prometheus.loadbalancer.server.port=9090"
       - "traefik.http.routers.prometheus.tls.certresolver=lets-encrypt"
       - "traefik.http.routers.prometheus.tls=true"
@@ -69,7 +69,7 @@ services:
       - traefik-net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.alertmanager.rule=Host(`alert.somethingforsale.tk`)"
+      - "traefik.http.routers.alertmanager.rule=Host(`alert.<domain>`)"
       - "traefik.http.services.alertmanager.loadbalancer.server.port=9093"
       - "traefik.http.routers.alertmanager.tls.certresolver=lets-encrypt"
       - "traefik.http.routers.alertmanager.tls=true"
@@ -108,7 +108,7 @@ services:
       - traefik-net
     labels:
       - "traefik.enable=true"
-      - "traefik.http.routers.grafana.rule=Host(`grafana.somethingforsale.tk`)"
+      - "traefik.http.routers.grafana.rule=Host(`grafana.domain`)"
       - "traefik.http.services.grafana.loadbalancer.server.port=3000"
       - "traefik.http.routers.grafana.tls.certresolver=lets-encrypt"
       - "traefik.http.routers.grafana.tls=true"
