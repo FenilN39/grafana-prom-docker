@@ -12,9 +12,9 @@
 global:
   # The smarthost and SMTP sender used for mail notifications.
   smtp_smarthost: 'smtp.gmail.com:587'
-  smtp_from: 'fenilnakrani123@gmail.com'
-  smtp_auth_username: 'fenilnakrani123@gmail.com'
-  smtp_auth_password: '#Arebiansamosa59'
+  smtp_from: 'sender_mail@gmail.com'
+  smtp_auth_username: 'sender_mail@gmail.com'
+  smtp_auth_password: 'mail_password'
 route:
   group_by: ['alertname']
   group_wait: 10s
@@ -24,7 +24,7 @@ route:
 receivers:
 - name: 'email'
   email_configs:
-  - to: 'fenilnakrani39@gmail.com'
+  - to: 'receiver@domain.com'
 inhibit_rules:
   - source_match:
       severity: 'critical'
