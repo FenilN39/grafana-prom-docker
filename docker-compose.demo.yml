@@ -1,3 +1,4 @@
+# this file is configured to use traefik server for the host.
 version: '3'
 
 volumes:
