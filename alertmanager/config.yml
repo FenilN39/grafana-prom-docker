@@ -6,7 +6,7 @@
  #     slack_configs:
  #         - send_resolved: true
  #           text: "{{ .CommonAnnotations.description }}"
- #           username: 'Prometheus'
+ 
  #           channel: '#<channel-name>'
  #           api_url: 'https://hooks.slack.com/services/<webhook-id>
 global:
@@ -25,6 +25,13 @@ receivers:
 - name: 'email'
   email_configs:
   - to: 'receiver@domain.com'
+- name: 'slack'
+  slack_configs:
+  - send_resolved: true
+    text: "{{ .CommonAnnotations.description }}"
+ 
+    channel: '#<channel-name>'
+    api_url: 'https://hooks.slack.com/services/<webhook-id>
 inhibit_rules:
   - source_match:
       severity: 'critical'
